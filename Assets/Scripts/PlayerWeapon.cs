@@ -1,17 +1,29 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerWeapon : MonoBehaviour
 {
-    [SerializeField] GameObject laser;
+    [SerializeField] GameObject[] lasers;
+    [SerializeField] RectTransform crosshair;
+    [SerializeField] Transform targetPoint;
+    [SerializeField] float targetDistance = 100f;
 
     private bool isFiring = false;
 
-
+    void Start()
+    {
+        Cursor.visible = false;
+    }
     void Update()
     {
         ProcessFiring();
+        MoveCrosshair();
+        MoveTargetPoint();
+        AimLasers();
     }
+
+
 
     public void OnFire(InputValue value)
     {
@@ -22,7 +34,34 @@ public class PlayerWeapon : MonoBehaviour
     private void ProcessFiring()
     {
 
-        var emmissionModule = laser.GetComponent<ParticleSystem>().emission;
-        emmissionModule.enabled = isFiring;
+        foreach (var laser in lasers)
+        {
+            var emmissionModule = laser.GetComponent<ParticleSystem>().emission;
+            emmissionModule.enabled = isFiring;
+        }
+
+
+    }
+
+    private void MoveCrosshair()
+    {
+        crosshair.position = Input.mousePosition;
+    }
+
+    private void MoveTargetPoint()
+    {
+        Vector3 targetPointPosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, targetDistance);
+        targetPoint.position = Camera.main.ScreenToWorldPoint(targetPointPosition);
+
+    }
+
+    private void AimLasers()
+    {
+        foreach (GameObject laser in lasers)
+        {
+            Vector3 fireDirection = targetPoint.position - this.transform.position;
+            Quaternion rotationToTarget = Quaternion.LookRotation(fireDirection);
+            laser.transform.rotation = rotationToTarget;
+        }
     }
 }
