@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float controlPitchFactor = 20f;
     [SerializeField] private float rotationSpeed = 10f;
 
+    private float deneme;
     Vector2 movement;
 
     void Update()
