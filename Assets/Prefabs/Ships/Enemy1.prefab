@@ -13,16 +13,28 @@ PrefabInstance:
       value: Enemy1
       objectReference: {fileID: 0}
     - target: {fileID: 3258208087881609918, guid: 794837120303365449f945b07bdf4ace, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3258208087881609918, guid: 794837120303365449f945b07bdf4ace, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3258208087881609918, guid: 794837120303365449f945b07bdf4ace, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3258208087881609918, guid: 794837120303365449f945b07bdf4ace, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -44.4
+      value: 512.1487
       objectReference: {fileID: 0}
     - target: {fileID: 3258208087881609918, guid: 794837120303365449f945b07bdf4ace, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 61.2
       objectReference: {fileID: 0}
     - target: {fileID: 3258208087881609918, guid: 794837120303365449f945b07bdf4ace, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.2
+      value: 171.5
       objectReference: {fileID: 0}
     - target: {fileID: 3258208087881609918, guid: 794837120303365449f945b07bdf4ace, type: 3}
       propertyPath: m_LocalRotation.w
@@ -51,6 +63,10 @@ PrefabInstance:
     - target: {fileID: 3258208087881609918, guid: 794837120303365449f945b07bdf4ace, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3258208087881609918, guid: 794837120303365449f945b07bdf4ace, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3349644523720560031, guid: 794837120303365449f945b07bdf4ace, type: 3}
       propertyPath: m_Size.y

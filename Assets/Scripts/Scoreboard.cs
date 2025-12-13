@@ -11,5 +11,6 @@ public class Scoreboard : MonoBehaviour
     {
         score += amount;
         scoreboardText.text = score.ToString();
+
     }
 }
