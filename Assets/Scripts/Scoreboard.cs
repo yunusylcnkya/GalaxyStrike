@@ -3,14 +3,14 @@ using UnityEngine;
 
 public class Scoreboard : MonoBehaviour
 {
-    [SerializeField] TMP_Text scoreboardText;
+    [SerializeField] TMP_Text scoreboardText; // Ekranda skoru gösteren TextMeshPro bileşeni
 
-    int score = 0;
+    int score = 0; // Oyuncunun mevcut skoru
 
+    // Skoru artırmak için çağrılan metod
     public void IncreaseScore(int amount)
     {
-        score += amount;
-        scoreboardText.text = score.ToString();
-
+        score += amount; // Skoru belirtilen miktarda artır
+        scoreboardText.text = score.ToString(); // TextMeshPro'ya yeni skoru yaz
     }
 }
